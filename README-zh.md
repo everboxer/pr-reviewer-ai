@@ -49,3 +49,11 @@
 ### 1 从模板创建机器人
 
 [**单击此处**](https://flows.network/flow/createByTemplate/Code-Review-Pull-Request)
+
+请检查 `trigger_phrase` 变量。这是你在 PR 评论中手动召唤检查机器人的魔法词。
+
+单击 **Create and Build** 按钮。
+
+### 2 添加你的 OpenAI API 密钥
+
+现在你将设置 OpenAI integration。单击**连接**，输入您的密钥并为其命名。
