@@ -65,3 +65,8 @@
 ## 3 配置机器人以访问 GitHub
 
 接下来，你需要告诉机器人它需要监控哪个 GitHub repo 以查看即将到来的 PR 进行检查。
+
+* `github_owner`:  *你想要为 repo 部署 🤖 的* GitHub org
+* `github_repo` :  *你想部署 🤖 的* GitHub repo
+
+> 让我们看一个例子。您想要部署机器人来检查`WasmEdge/wasmedge_hyper_demo` repo 中的PR代码。这里 `github_owner = WasmEdge` 且 `github_repo = wasmedge_hyper_demo`。
