@@ -82,3 +82,7 @@
 这就好了！你现在处在 flow 详细信息页面，正在等待 flow 函数构建。一旦 flow 状态变为 `运行中`，机器人就准备好进行代码检查了！每个新PR、每个新提交以及PR评论中的魔法词（即`trigger_phrase`），都会召唤机器人。
 
 [<img width="450" alt="image" src="https://user-images.githubusercontent.com/45785633/229329247-16273aec-f89b-4375-bf2b-4ffce5e35a33.png">](https://user-images.githubusercontent.com/45785633/229329247-16273aec-f89b-4375-bf2b-4ffce5e35a33.png)
+
+## 常见问题解答
+
+### 自定义机器人
