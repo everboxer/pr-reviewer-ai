@@ -74,3 +74,9 @@
 点击 **Connect** 或 **+ Add new authentication** 按钮，以使函数可以访问 GitHub repo 并部署🤖️。你将被重定向到一个新页面，在此页面须授予 [flows.network](https://flows.network/) 对该 repo 的权限。
 
 [<img width="450" alt="image" src="https://github.com/flows-network/github-pr-summary/assets/45785633/6cefff19-9eeb-4533-a20b-03c6a9c89473">](https://github.com/flows-network/github-pr-summary/assets/45785633/6cefff19-9eeb-4533-a20b-03c6a9c89473)
+
+完成后请关闭标签页并返回 flow.network 页面。点击 **Deploy**.
+
+### 等待魔法的到来！
+
+这就好了！你现在处在 flow 详细信息页面，正在等待 flow 函数构建。一旦 flow 状态变为 `运行中`，机器人就准备好进行代码检查了！每个新PR、每个新提交以及PR评论中的魔法词（即`trigger_phrase`），都会召唤机器人。
