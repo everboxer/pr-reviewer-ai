@@ -99,3 +99,9 @@ flows.network 平台将自动检测并从你的更新的源代码重建机器人
 你可以手动[创建一个新的 flow](https://flows.network/flow/new)，并导入机器人的源代码 repo（即你从模板克隆的 repo）。然后，可以使用 flow config 来指定 `github_owner` 和 `github_repo`，以指向你需要在其上部署机器人的目标 repo。部署并授权访问该目标 repo。
 
 可以把这个机器人安装在你想要部署此机器人的所有目标 repo 上。
+
+>你可以将单个 flow 函数 repo 部署为多个机器人的源代码。当更新 repo 中的源代码并将其推送到 GitHub 时，会更改所有机器人的行为。
+
+### 定制自己的魔法词
+
+进入机器人正在运行的 flow 函数的 "Settings" 选项卡，你可以更新 `trigger_phrase` 配置。该配置的值是让用户触发机器人的魔法词，可以从 PR 评论触发检查。
