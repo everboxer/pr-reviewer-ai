@@ -90,3 +90,10 @@
 机器人的源代码可在你从模板克隆的 GitHub repo 中找到。请根据自己的需求任意更改源代码（例如，模型、上下文长度、API 密钥和提示）。如果需要帮助，请在 [Discord 中询问](https://discord.gg/ccZn9ZMfFf)！
 
 ### Use GPT4
+
+默认情况下，该机器人使用 GPT3.5 进行代码检查。如果你的 OpenAI API 密钥可以访问 GPT4，则可以在克隆的源代码 repo 中打开 `src/github-pr-review.rs` 文件，并在源代码中将 `GPT35Turbo` 更改为 `GPT4`。将更改提交并推送回 GitHub。
+flows.network 平台将自动检测并从你的更新的源代码重建机器人。
+
+### 在多个 repo 上使用机器人
+
+你可以手动[创建一个新的 flow](https://flows.network/flow/new)，并导入机器人的源代码 repo（即你从模板克隆的 repo）。然后，可以使用 flow config 来指定 `github_owner` 和 `github_repo`，以指向你需要在其上部署机器人的目标 repo。部署并授权访问该目标 repo。
