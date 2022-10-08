@@ -105,3 +105,7 @@ flows.network 平台将自动检测并从你的更新的源代码重建机器人
 ### 定制自己的魔法词
 
 进入机器人正在运行的 flow 函数的 "Settings" 选项卡，你可以更新 `trigger_phrase` 配置。该配置的值是让用户触发机器人的魔法词，可以从 PR 评论触发检查。
+
+## 鸣谢
+
+此 flow 函数最初由 [Jay Chen](https://github.com/jaykchen) 创建，[jinser](https://github.com/jetjinser) 为优化来自 GitHub 的事件触发器做出了重大贡献。
