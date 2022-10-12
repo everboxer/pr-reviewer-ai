@@ -8,3 +8,9 @@ use github_flows::{
     EventPayload, GithubLogin
 };
 use http_req::{
+    request::{Method, Request},
+    uri::Uri,
+};
+use openai_flows::{
+    chat::{ChatModel, ChatOptions},
+    OpenAIFlows,
