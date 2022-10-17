@@ -30,3 +30,12 @@ pub async fn run() -> anyhow::Result<()> {
     dotenv().ok();
     logger::init();
     log::debug!("Running function at github-pr-review/main");
+
+    let owner = env::var("github_owner").unwrap_or("juntao".to_string());
+    let repo = env::var("github_repo").unwrap_or("test".to_string());
+    let trigger_phrase = env::var("trigger_phrase").unwrap_or("flows review".to_string());
+
+    let events = vec!["pull_request", "issue_comment"];
+    println!("MAGIC");
+    listen_to_event(&GithubLogin::Default, &owner, &repo, events, |payload| {
+        handler(
