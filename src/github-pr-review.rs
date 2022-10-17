@@ -23,3 +23,10 @@ use std::env;
 static CHAR_SOFT_LIMIT : usize = 9000;
 static MODEL : ChatModel = ChatModel::GPT35Turbo;
 // static MODEL : ChatModel = ChatModel::GPT4;
+
+#[no_mangle]
+#[tokio::main(flavor = "current_thread")]
+pub async fn run() -> anyhow::Result<()> {
+    dotenv().ok();
+    logger::init();
+    log::debug!("Running function at github-pr-review/main");
