@@ -39,3 +39,10 @@ pub async fn run() -> anyhow::Result<()> {
     println!("MAGIC");
     listen_to_event(&GithubLogin::Default, &owner, &repo, events, |payload| {
         handler(
+            &owner,
+            &repo,
+            &trigger_phrase,
+            payload,
+        )
+    })
+    .await;
