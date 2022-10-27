@@ -46,3 +46,10 @@ pub async fn run() -> anyhow::Result<()> {
         )
     })
     .await;
+
+    Ok(())
+}
+
+async fn handler(
+    owner: &str,
+    repo: &str,
