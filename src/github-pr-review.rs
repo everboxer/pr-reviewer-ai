@@ -53,3 +53,19 @@ pub async fn run() -> anyhow::Result<()> {
 async fn handler(
     owner: &str,
     repo: &str,
+    trigger_phrase: &str,
+    payload: EventPayload,
+) {
+    // log::debug!("Received payload: {:?}", payload);
+    let mut new_commit : bool = false;
+    let (title, pull_number, _contributor) = match payload {
+        EventPayload::PullRequestEvent(e) => {
+            if e.action == PullRequestEventAction::Opened {
+                log::debug!("Received payload: PR Opened");
+            } else if e.action == PullRequestEventAction::Synchronize {
+                new_commit = true;
+                log::debug!("Received payload: PR Synced");
+            } else {
+                log::debug!("Not a Opened or Synchronize event for PR");
+                return;
+            }
