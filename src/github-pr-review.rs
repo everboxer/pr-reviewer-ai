@@ -79,3 +79,19 @@ async fn handler(
         EventPayload::IssueCommentEvent(e) => {
             if e.action == IssueCommentEventAction::Deleted {
                 log::debug!("Deleted issue comment");
+                return;
+            }
+            log::debug!("Other event for issue comment");
+
+            let body = e.comment.body.unwrap_or_default();
+
+            // if e.comment.performed_via_github_app.is_some() {
+            //     return;
+            // }
+            // TODO: Makeshift but operational
+            if body.starts_with("Hello, I am a [code review bot]") {
+                log::info!("Ignore comment via bot");
+                return;
+            };
+
+            if !body.to_lowercase().contains(&trigger_phrase.to_lowercase()) {
