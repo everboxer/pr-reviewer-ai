@@ -95,3 +95,10 @@ async fn handler(
             };
 
             if !body.to_lowercase().contains(&trigger_phrase.to_lowercase()) {
+                log::info!("Ignore the comment without magic words");
+                return;
+            }
+
+            (e.issue.title, e.issue.number, e.issue.user.login)
+        }
+        _ => return,
