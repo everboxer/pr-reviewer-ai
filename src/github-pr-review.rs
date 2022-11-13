@@ -69,3 +69,13 @@ async fn handler(
                 log::debug!("Not a Opened or Synchronize event for PR");
                 return;
             }
+            let p = e.pull_request;
+            (
+                p.title.unwrap_or("".to_string()),
+                p.number,
+                p.user.unwrap().login,
+            )
+        }
+        EventPayload::IssueCommentEvent(e) => {
+            if e.action == IssueCommentEventAction::Deleted {
+                log::debug!("Deleted issue comment");
