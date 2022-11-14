@@ -108,3 +108,9 @@ async fn handler(
     let system = &format!("You are a senior software developer. You will review a source code file and its patch related to the subject of \"{}\".", title);
     let mut openai = OpenAIFlows::new();
     openai.set_retry_times(3);
+
+    let octo = get_octo(&GithubLogin::Default);
+    let issues = octo.issues(owner, repo);
+    let mut comment_id: CommentId = 0u64.into();
+    if new_commit {
+        // Find the first "Hello, I am a [code review bot]" comment to update
