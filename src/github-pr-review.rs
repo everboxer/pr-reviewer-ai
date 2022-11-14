@@ -102,3 +102,9 @@ async fn handler(
             (e.issue.title, e.issue.number, e.issue.user.login)
         }
         _ => return,
+    };
+
+    let chat_id = format!("PR#{pull_number}");
+    let system = &format!("You are a senior software developer. You will review a source code file and its patch related to the subject of \"{}\".", title);
+    let mut openai = OpenAIFlows::new();
+    openai.set_retry_times(3);
