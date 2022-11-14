@@ -114,3 +114,8 @@ async fn handler(
     let mut comment_id: CommentId = 0u64.into();
     if new_commit {
         // Find the first "Hello, I am a [code review bot]" comment to update
+        match issues.list_comments(pull_number).send().await {
+            Ok(comments) => {
+                for c in comments.items {
+                    if c.body.unwrap_or_default().starts_with("Hello, I am a [code review bot]") {
+                        comment_id = c.id;
