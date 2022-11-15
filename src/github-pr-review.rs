@@ -125,3 +125,7 @@ async fn handler(
             }
             Err(error) => {
                 log::error!("Error getting comments: {}", error);
+                return;
+            }
+        }
+    } else {
