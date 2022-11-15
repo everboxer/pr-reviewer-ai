@@ -119,3 +119,9 @@ async fn handler(
                 for c in comments.items {
                     if c.body.unwrap_or_default().starts_with("Hello, I am a [code review bot]") {
                         comment_id = c.id;
+                        break;
+                    }
+                }
+            }
+            Err(error) => {
+                log::error!("Error getting comments: {}", error);
