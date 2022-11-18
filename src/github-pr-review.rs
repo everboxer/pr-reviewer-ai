@@ -137,3 +137,7 @@ async fn handler(
             Err(error) => {
                 log::error!("Error posting comment: {}", error);
                 return;
+            }
+        }
+    }
+    if comment_id == 0u64.into() { return; }
