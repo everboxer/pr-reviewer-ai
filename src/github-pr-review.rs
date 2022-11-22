@@ -141,3 +141,9 @@ async fn handler(
         }
     }
     if comment_id == 0u64.into() { return; }
+
+    let pulls = octo.pulls(owner, repo);
+    let mut resp = String::new();
+    resp.push_str("Hello, I am a [code review bot](https://github.com/flows-network/github-pr-review/) on [flows.network](https://flows.network/). Here are my reviews of changed source code files in this PR.\n\n------\n\n");
+    match pulls.list_files(pull_number).await {
+        Ok(files) => {
