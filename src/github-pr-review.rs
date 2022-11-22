@@ -156,3 +156,11 @@ async fn handler(
                 // The f.raw_url is a redirect. So, we need to construct our own here.
                 let contents_url = f.contents_url.as_str();
                 if contents_url.len() < 40 { continue; }
+                let hash = &contents_url[(contents_url.len() - 40)..];
+                let raw_url = format!(
+                    "https://raw.githubusercontent.com/{owner}/{repo}/{}/{}", hash, filename
+                );
+                let file_uri = Uri::try_from(raw_url.as_str()).unwrap();
+                let mut writer = Vec::new();
+                match Request::new(&file_uri)
+                    .method(Method::GET)
