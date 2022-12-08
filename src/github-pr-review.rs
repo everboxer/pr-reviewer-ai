@@ -171,3 +171,8 @@ async fn handler(
                         Err(_e) => {
                             log::error!("Cannot get file");
                             continue;
+                        }
+                        _ => {}
+                }
+                let file_as_text = String::from_utf8_lossy(&writer);
+                let t_file_as_text = truncate(&file_as_text, CHAR_SOFT_LIMIT);
