@@ -176,3 +176,11 @@ async fn handler(
                 }
                 let file_as_text = String::from_utf8_lossy(&writer);
                 let t_file_as_text = truncate(&file_as_text, CHAR_SOFT_LIMIT);
+
+                resp.push_str("## [");
+                resp.push_str(filename);
+                resp.push_str("](");
+                resp.push_str(f.blob_url.as_str());
+                resp.push_str(")\n\n");
+
+                log::debug!("Sending file to OpenAI: {}", filename);
