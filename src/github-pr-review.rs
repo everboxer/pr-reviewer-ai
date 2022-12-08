@@ -164,3 +164,10 @@ async fn handler(
                 let mut writer = Vec::new();
                 match Request::new(&file_uri)
                     .method(Method::GET)
+                    .header("Accept", "plain/text")
+                    .header("User-Agent", "Flows Network Connector")
+                    .send(&mut writer)
+                    .map_err(|_e| {}) {
+                        Err(_e) => {
+                            log::error!("Cannot get file");
+                            continue;
