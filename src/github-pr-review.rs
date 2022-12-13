@@ -191,3 +191,11 @@ async fn handler(
                 };
                 let question = "Review the following source code and look for potential problems. The code might be truncated. So, do NOT comment on the completeness of the source code.\n\n".to_string() + t_file_as_text;
                 match openai.chat_completion(&chat_id, &question, &co).await {
+                    Ok(r) => {
+                        resp.push_str(&r.choice);
+                        resp.push_str("\n\n");
+                        log::debug!("Received OpenAI resp for file: {}", filename);
+                    }
+                    Err(e) => {
+                        log::error!("OpenAI returns error for file review for {}: {}", filename, e);
+                    }
