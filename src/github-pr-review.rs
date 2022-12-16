@@ -199,3 +199,12 @@ async fn handler(
                     Err(e) => {
                         log::error!("OpenAI returns error for file review for {}: {}", filename, e);
                     }
+                }
+
+                log::debug!("Sending patch to OpenAI: {}", filename);
+                let co = ChatOptions {
+                    model: MODEL,
+                    restart: false,
+                    system_prompt: Some(system),
+                };
+                let patch_as_text = f.patch.unwrap_or("".to_string());
