@@ -208,3 +208,10 @@ async fn handler(
                     system_prompt: Some(system),
                 };
                 let patch_as_text = f.patch.unwrap_or("".to_string());
+                let t_patch_as_text = truncate(&patch_as_text, CHAR_SOFT_LIMIT);
+                let question = "The following is a patch. Please summarize key changes.\n\n".to_string() + t_patch_as_text;
+                match openai.chat_completion(&chat_id, &question, &co).await {
+                    Ok(r) => {
+                        resp.push_str(&r.choice);
+                        resp.push_str("\n\n");
+                        log::debug!("Received OpenAI resp for patch: {}", filename);
