@@ -220,3 +220,12 @@ async fn handler(
                         log::error!("OpenAI returns error for patch review for {}: {}", filename, e);
                     }
                 }
+            }
+        },
+        Err(_error) => {
+            log::error!("Cannot get file list");
+        }
+    }
+
+    // Send the entire response to GitHub PR
+    // issues.create_comment(pull_number, resp).await.unwrap();
