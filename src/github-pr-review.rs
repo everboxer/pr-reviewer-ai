@@ -215,3 +215,8 @@ async fn handler(
                         resp.push_str(&r.choice);
                         resp.push_str("\n\n");
                         log::debug!("Received OpenAI resp for patch: {}", filename);
+                    }
+                    Err(e) => {
+                        log::error!("OpenAI returns error for patch review for {}: {}", filename, e);
+                    }
+                }
