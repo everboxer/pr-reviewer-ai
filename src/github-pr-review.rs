@@ -229,3 +229,9 @@ async fn handler(
 
     // Send the entire response to GitHub PR
     // issues.create_comment(pull_number, resp).await.unwrap();
+    match issues.update_comment(comment_id, resp).await {
+        Err(error) => {
+            log::error!("Error posting resp: {}", error);
+        }
+        _ => {}
+    }
