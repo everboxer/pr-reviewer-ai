@@ -1,1 +1,1 @@
-<div alig
+<div align="ri
