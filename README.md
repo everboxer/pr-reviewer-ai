@@ -1,1 +1,1 @@
-<div align="ri
+<div align="right"
