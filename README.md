@@ -4,4 +4,4 @@
 
 </div>
 
-# <p align="center">ChatGPT/4 code reviewer for
+# <p align="center">ChatGPT/4 code reviewer for Github 
