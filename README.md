@@ -7,4 +7,5 @@
 # <p align="center">ChatGPT/4 code reviewer for Github PR</p>
 
 <p align="center">
-<a href="https://discord.gg/ccZn9Z
+<a href="https://discord.gg/ccZn9ZMfFf">
+<
