@@ -8,4 +8,4 @@
 
 <p align="center">
 <a href="https://discord.gg/ccZn9ZMfFf">
-<img src="https://img.shie
+<img src="https://img.shields.io
