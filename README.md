@@ -8,4 +8,4 @@
 
 <p align="center">
 <a href="https://discord.gg/ccZn9ZMfFf">
-<img src="https://img.shields.io/badge/chat-Discord-7289DA?logo=discord" alt="everboxer Dis
+<img src="https://img.shields.io/badge/chat-Discord-7289DA?logo=discord" alt="everboxer Discord">
