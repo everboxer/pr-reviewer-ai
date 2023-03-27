@@ -11,4 +11,4 @@
 <img src="https://img.shields.io/badge/chat-Discord-7289DA?logo=discord" alt="everboxer Discord">
 </a>
 <a href="https://twitter.com/everboxer">
-<img src="https://
+<img src="https://img.shie
