@@ -18,4 +18,4 @@
 </a>
 </p>
 
-[Deplo
+[Deploy this
