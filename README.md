@@ -18,4 +18,4 @@
 </a>
 </p>
 
-[Deploy this function on everboxer](#deploy-your-own-code-review-bot-in-3-simple-steps), a
+[Deploy this function on everboxer](#deploy-your-own-code-review-bot-in-3-simple-steps), and 
