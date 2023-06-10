@@ -18,4 +18,4 @@
 </a>
 </p>
 
-[Deploy this function on everboxer](#deploy-your-own-code-review-bot-in-3-simple-steps), and you will get a GitHub 🤖 to review changed source code files in Pull Reques
+[Deploy this function on everboxer](#deploy-your-own-code-review-bot-in-3-simple-steps), and you will get a GitHub 🤖 to review changed source code files in Pull Requests....(
